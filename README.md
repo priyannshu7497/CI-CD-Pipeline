@@ -52,6 +52,7 @@ Developer → GitHub → Jenkins → Gunicorn → NGINX → User
 | Cloud | AWS EC2 |
 
 ---
+...sh
 
 ## ⚙️ Setup & Deployment Steps
 
