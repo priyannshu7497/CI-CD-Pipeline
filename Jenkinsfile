@@ -6,6 +6,7 @@ pipeline {
     }
 
     stages {
+
         stage('Build') {
             steps {
                 echo '🔧 Creating virtual environment and installing dependencies...'
@@ -28,42 +29,15 @@ pipeline {
             }
             steps {
                 echo '🚀 Deploying Flask app...'
+                sh 'pkill -f app.py || true'
                 sh 'nohup ./venv/bin/python app.py > flask.log 2>&1 &'
             }
         }
     }
 
     post {
-        success {
-            echo '✅ Build succeeded. Sending success email...'
-            mail to: 'your_email@gmail.com',
-                 subject: "✅ Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: """\
-Hello Swetabh,
-
-Your Jenkins build **${env.JOB_NAME} #${env.BUILD_NUMBER}** succeeded.
-
-🔗 View it here: ${env.BUILD_URL}
-
-Regards,  
-Jenkins CI/CD Bot
-"""
-        }
-
-        failure {
-            echo '❌ Build failed. Sending failure email...'
-            mail to: 'your_email@gmail.com',
-                 subject: "❌ Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: """\
-Hello Swetabh,
-
-Your Jenkins build **${env.JOB_NAME} #${env.BUILD_NUMBER}** has failed.
-
-🔗 Check the logs: ${env.BUILD_URL}
-
-Regards,  
-Jenkins CI/CD Bot
-"""
+        always {
+            echo "🎉 Pipeline Completed!"
         }
     }
 }
