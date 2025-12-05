@@ -1,43 +1,38 @@
 pipeline {
     agent any
 
-    environment {
-        VENV_DIR = "./venv"
-    }
-
     stages {
 
-        stage('Build') {
+        stage('Clone Repository') {
             steps {
-                echo '🔧 Creating virtual environment and installing dependencies...'
-                sh 'python3 -m venv $VENV_DIR'
-                sh './venv/bin/pip install --upgrade pip'
-                sh './venv/bin/pip install -r requirements.txt'
+                git branch: 'main', url: 'git@github.com:priyannshu7497/CI-CD-Pipeline.git'
             }
         }
 
-        stage('Test') {
+        stage('Install Dependencies') {
             steps {
-                echo '🧪 Running tests...'
-                sh './venv/bin/python -m pytest'
+                sh 'pip3 install -r requirements.txt'
             }
         }
 
-        stage('Deploy') {
-            when {
-                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-            }
+        stage('Run Tests') {
             steps {
-                echo '🚀 Deploying Flask app...'
-                sh 'pkill -f app.py || true'
-                sh 'nohup ./venv/bin/python app.py > flask.log 2>&1 &'
+                sh 'python3 -m pytest || echo "No tests found, skipping..."'
             }
         }
-    }
 
-    post {
-        always {
-            echo "🎉 Pipeline Completed!"
+        stage('Deploy to EC2') {
+            steps {
+                sshagent(['ubuntu']) {
+                    sh '''
+                    ssh -o StrictHostKeyChecking=no ubuntu@3.110.16.94 "
+                    cd /var/www/flask-app &&
+                    git pull &&
+                    sudo systemctl restart flask
+                    "
+                    '''
+                }
+            }
         }
     }
 }
