@@ -1,4 +1,3 @@
-📄 README.md (Copy-Paste Ready)
 # 🚀 Flask CI/CD Pipeline Deployment on AWS EC2
 
 ### **📌 Student Details**
@@ -32,8 +31,6 @@ Whenever code is pushed to GitHub, Jenkins automatically:
 
 ## 🏗 Architecture
 
-
-
 Developer → GitHub → Jenkins → Gunicorn → NGINX → User
 
 
@@ -52,7 +49,6 @@ Developer → GitHub → Jenkins → Gunicorn → NGINX → User
 | Cloud | AWS EC2 |
 
 ---
-...sh
 
 ## ⚙️ Setup & Deployment Steps
 
@@ -60,10 +56,11 @@ Developer → GitHub → Jenkins → Gunicorn → NGINX → User
 - Ubuntu 22.04
 - Open ports: `22`, `80`, `8080`
 
-
+sh
 sudo apt update && sudo apt upgrade -y
 
 2️⃣ Install Python & Flask App
+
 sudo apt install python3 python3-pip python3-venv -y
 git clone <your-repo-url>
 cd repo-folder
@@ -71,25 +68,22 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-
 Test locally:
 
 python app.py
 
 3️⃣ Install & Configure Jenkins
+
 sudo apt install openjdk-17-jdk -y
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
    /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 sudo apt-get install jenkins -y
 
-
 Enable Jenkins:
 
 sudo systemctl enable --now jenkins
 
-
 Login → Install plugins → Add GitHub Webhooks.
-
 4️⃣ Configure Jenkins Pipeline
 
 Add the following Jenkinsfile in the repo:
@@ -110,8 +104,8 @@ pipeline {
 }
 
 5️⃣ Install Gunicorn & Create Systemd Service
-pip install gunicorn
 
+pip install gunicorn
 
 Create service:
 
@@ -129,7 +123,6 @@ ExecStart=/var/www/flask-app/venv/bin/gunicorn --workers 3 --bind unix:/var/www/
 [Install]
 WantedBy=multi-user.target
 
-
 Start service:
 
 sudo systemctl daemon-reload
@@ -137,6 +130,7 @@ sudo systemctl start flask
 sudo systemctl enable flask
 
 6️⃣ Configure Nginx Reverse Proxy
+
 sudo nano /etc/nginx/sites-enabled/flask
 
 server {
@@ -149,7 +143,6 @@ server {
     }
 }
 
-
 Restart:
 
 sudo systemctl restart nginx
@@ -160,11 +153,9 @@ Test locally:
 
 curl http://localhost
 
-
 Visit in browser:
 
 http://<EC2-Public-IP>
-
 
 Expected Output:
 
@@ -172,9 +163,7 @@ Hello from Flask CI/CD Pipeline!
 
 📸 Screenshots
 Item	Screenshot
-
-<img src="https://raw.githubusercontent.com/priyanshu/CI-CD-Pipeline/Flask-CICD-Pipeline Screenshot/Jenkins Pipeline Success.png" width="600">
-
+Jenkins Pipeline Success	(Add Screenshot)
 GitHub Repo	(Add Screenshot)
 Nginx running	(Add Screenshot)
 Browser Output	(Add Screenshot)
@@ -184,17 +173,15 @@ Browser Output	(Add Screenshot)
 ✔ Auto deployment on push
 ✔ Secure + production ready
 ✔ Documented setup
-
 🏁 Conclusion
 
 This project demonstrates how modern development teams automate deployment workflows using:
 
-CI/CD pipelines
+    CI/CD pipelines
 
-Cloud hosting
+    Cloud hosting
 
-Web server configuration
+    Web server configuration
 
 It improves deployment speed, reduces manual errors, and enables scalable production environments.
-
 ⭐ Author: Priyanshu Gupta
