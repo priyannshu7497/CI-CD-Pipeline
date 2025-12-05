@@ -59,7 +59,7 @@ Developer → GitHub → Jenkins → Gunicorn → NGINX → User
 - Ubuntu 22.04
 - Open ports: `22`, `80`, `8080`
 
-```sh
+
 sudo apt update && sudo apt upgrade -y
 
 2️⃣ Install Python & Flask App
