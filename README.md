@@ -171,7 +171,7 @@ Hello from Flask CI/CD Pipeline!
 
 📸 Screenshots
 Item	Screenshot
-([Jenkins Pipeline Success	](https://github.com/priyannshu7497/CI-CD-Pipeline/blob/b1b9463507e65f90a8e3971e91c7fe4ddf3e86b9/Flask-CICD-Pipeline%20Screenshot/Jenkins%20Pipeline%20Success.png))
+[Jenkins Pipeline Success](https://github.com/priyannshu7497/CI-CD-Pipeline/blob/b1b9463507e65f90a8e3971e91c7fe4ddf3e86b9/Flask-CICD-Pipeline%20Screenshot/Jenkins%20Pipeline%20Success.png))
 GitHub Repo	(Add Screenshot)
 Nginx running	(Add Screenshot)
 Browser Output	(Add Screenshot)
