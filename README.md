@@ -163,17 +163,20 @@ Hello from Flask CI/CD Pipeline!
 ```
 📸 Screenshots
 Item	Screenshot  
-
 GitHub Repo	
+
 (<img src="https://raw.githubusercontent.com/priyannshu7497/CI-CD-Pipeline/main/Flask-CICD-Pipeline%20Screenshot//git%20clone%20repo.png" width="600">)
 
 Jenkins Pipeline Success	
+
 (<img src="https://raw.githubusercontent.com/priyannshu7497/CI-CD-Pipeline/main/Flask-CICD-Pipeline%20Screenshot/Jenkins%20Pipeline%20Success.png" width="600">)
 
 Nginx running
+
 (<img src="https://raw.githubusercontent.com/priyannshu7497/CI-CD-Pipeline/main/Flask-CICD-Pipeline%20Screenshot/nginx%20works.png" width="600">)
  
 Browser Output	
+
 (<img src="https://raw.githubusercontent.com/priyannshu7497/CI-CD-Pipeline/main/Flask-CICD-Pipeline%20Screenshot/Browser%20Output.png" width="600">)
 
 ```
