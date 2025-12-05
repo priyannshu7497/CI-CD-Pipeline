@@ -165,7 +165,7 @@ Hello from Flask CI/CD Pipeline!
 Item	Screenshot  
 GitHub Repo	
 
-(<img src="https://raw.githubusercontent.com/priyannshu7497/CI-CD-Pipeline/main/Flask-CICD-Pipeline%20Screenshot//git%20clone%20repo.png" width="600">)
+(<img src="https://raw.githubusercontent.com/priyannshu7497/CI-CD-Pipeline/main/Flask-CICD-Pipeline%20Screenshot/git%20clone%20repo.png" width="600">)
 
 Jenkins Pipeline Success	
 
