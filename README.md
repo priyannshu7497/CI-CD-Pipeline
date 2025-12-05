@@ -4,7 +4,7 @@
 | Field | Information |
 |-------|------------|
 | Name | Priyanshu Gupta |
-| College | Amity University |
+| HeroVired |
 | Project | CI/CD Pipeline with Jenkins & Flask |
 
 ---
@@ -53,7 +53,7 @@ Developer → GitHub → Jenkins → Gunicorn → NGINX → User
 ## ⚙️ Setup & Deployment Steps
 
 ### **1️⃣ Launch EC2 Instance**
-- Ubuntu 22.04
+- Ubuntu 24.04
 - Open ports: `22`, `80`, `8080`
 
 ```sh
