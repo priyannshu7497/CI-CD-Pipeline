@@ -56,7 +56,7 @@ Developer → GitHub → Jenkins → Gunicorn → NGINX → User
 - Ubuntu 22.04
 - Open ports: `22`, `80`, `8080`
 
-sh
+```sh
 sudo apt update && sudo apt upgrade -y
 
 2️⃣ Install Python & Flask App
@@ -160,13 +160,15 @@ http://<EC2-Public-IP>
 Expected Output:
 
 Hello from Flask CI/CD Pipeline!
-
+```
 📸 Screenshots
-Item	Screenshot
-Jenkins Pipeline Success	(Add Screenshot)
+Item	Screenshot  
+Jenkins Pipeline Success	(<img src="https://raw.githubusercontent.com/priyannshu7497/CI-CD-Pipeline/main/Flask-CICD-Pipeline%20Screenshot/Jenkins%20Pipeline%20Success.png" width="600">)
 GitHub Repo	(Add Screenshot)
 Nginx running	(Add Screenshot)
 Browser Output	(Add Screenshot)
+```
+
 🎯 Final Deliverables
 
 ✔ Fully working CI/CD
